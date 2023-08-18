@@ -2,6 +2,7 @@ const { Activity, Country, Country_Activity } = require("../../db.js");
 
 const postActivity = async (req, res) => {
   const { name, difficulty, duration, season, countries } = req.body;
+
   try {
     const [newActivity] = await Activity.findOrCreate({
       where: { name, difficulty, duration, season },
@@ -24,7 +25,6 @@ const postActivity = async (req, res) => {
       if (country) {
         await Country_Activity.create({
           CountryId: country.id,
-
           ActivityId: newActivity.id,
         });
       }

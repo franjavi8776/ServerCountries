@@ -37,7 +37,6 @@ describe("Routing tests", () => {
         const countryObject = response[0];
         expect(countryObject).toHaveProperty("id");
         expect(countryObject).toHaveProperty("name");
-        // ... verifica otras propiedades aquí ...
       }
     });
     it("If no countries found, respond with status 404", async () => {
