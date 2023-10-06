@@ -9,19 +9,8 @@ const sequelize = new Sequelize(
   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`,
 
   {
-    // dialect: "postgres",
-    // host: DB_HOST,
-    // username: DB_USER,
-    // password: DB_PASSWORD,
-    // database: DB_DATABASE,
     logging: false,
     native: false,
-    // dialectOptions: {
-    //   ssl: {
-    //     require: true, // Indicar que se requiere SSL
-    //     rejectUnauthorized: false, // Para evitar errores en desarrollo (NO recomendado en producción)
-    //   },
-    // },
   }
 );
 const basename = path.basename(__filename);

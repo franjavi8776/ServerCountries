@@ -11,5 +11,10 @@
       "src": "/(.*)",
       "dest": "/"
     }
-  ]
+  ],
+  "build": {
+    "development": {
+      "outputDirectory": ".vercel_build_output"
+    }
+  }
 }
