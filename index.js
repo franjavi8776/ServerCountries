@@ -1,9 +1,9 @@
 require("dotenv").config();
-
+const axios = require("axios");
 const server = require("./src/server");
-const { conn } = require("./src/db.js");
+const { conn, Country } = require("./src/db.js");
 
-const { PORT } = process.env;
+const { PORT, API_URL } = process.env;
 
 // const saveCountriesToDatabase = async () => {
 //   try {
