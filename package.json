@@ -7,8 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "start": "node index.js",
+    "server": "node index.js",
     "api": "echo 'Local API listening on PORT 5000' & json-server --watch api/db.json -p 5000 -q",
+    "start": "npm run server",
     "test": "jest --detectOpenHandles"
   },
   "author": "",
@@ -24,7 +25,7 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.22",
     "npm-run-all": "^4.1.5",
-    "pg": "^8.11.3",
+    "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.31.1",
     "supertest": "^6.3.3"
