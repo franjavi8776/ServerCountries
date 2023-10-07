@@ -2,14 +2,6 @@
   "version": 2,
   "routes": [
     {
-      "src": "/countries",
-      "dest": "/countries"
-    },
-    {
-      "src": "/activities",
-      "dest": "/activities"
-    },
-    {
       "src": "/(.*)",
       "dest": "/"
     }
