@@ -1,5 +1,17 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
+    }
+  ],
   "env": {
     "DB_USER": "default",
     "DB_HOST": "ep-old-haze-75521865-pooler.us-east-1.postgres.vercel-storage.com",
