@@ -3,17 +3,17 @@ const { Sequelize } = require("sequelize");
 
 const fs = require("fs");
 const path = require("path");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_DATABASE } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_DATABASE, DB_URL } = process.env;
 
 const sequelize = new Sequelize(
   // `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`,
-
+  DB_URL,
   {
-    dialect: "postgres",
-    host: DB_HOST,
-    username: DB_USER,
-    password: DB_PASSWORD,
-    database: DB_DATABASE,
+    // dialect: "postgres",
+    // host: DB_HOST,
+    // username: DB_USER,
+    // password: DB_PASSWORD,
+    // database: DB_DATABASE,
     logging: false,
     native: false,
     dialectOptions: {
