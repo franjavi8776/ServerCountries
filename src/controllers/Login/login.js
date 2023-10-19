@@ -1,4 +1,6 @@
 const { User } = require("../../db.js");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const login = async (req, res) => {
   const { email, password } = req.body;
@@ -14,8 +16,17 @@ const login = async (req, res) => {
       return res.status(404).json({ message: "Usuario no encontrado" });
     }
 
-    if (user.password === password) {
-      return res.status(200).json({ access: true });
+    const passwordMatch = await bcrypt.compare(password, user.password);
+
+    if (passwordMatch) {
+      const token = jwt.sign(
+        { userId: user.id, email: user.email },
+        "tu_token_secret",
+        {
+          expiresIn: "1h",
+        }
+      );
+      return res.status(200).json({ access: true, token });
     } else {
       return res.status(403).json({ message: "Credenciales inválidas" });
     }

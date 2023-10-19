@@ -1,5 +1,5 @@
 require("dotenv").config();
-const axios = require("axios");
+// const axios = require("axios");
 const server = require("./src/server");
 const { conn, Country } = require("./src/db.js");
 
