@@ -16,6 +16,7 @@ const sequelize = new Sequelize(
     // database: DB_DATABASE,
     logging: false,
     native: false,
+    dialectModule: require("pg"),
     dialectOptions: {
       ssl: {
         require: true, // Indicar que se requiere SSL
